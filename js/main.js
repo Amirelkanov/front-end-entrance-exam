@@ -1,3 +1,1 @@
-function trest() {
-    console.log('trest');
-}
+console.log('test');
