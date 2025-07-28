@@ -1,19 +1,19 @@
-import js from "@eslint/js";
-import globals from "globals";
-import { defineConfig } from "eslint/config";
+import js from '@eslint/js';
+import globals from 'globals';
+import prettier from 'eslint-plugin-prettier';
+import { defineConfig } from 'eslint/config';
 
 export default defineConfig([
-  {
-    files: ["**/*.{js,mjs,cjs}"],
-    plugins: { js },
-    extends: ["js/recommended"],
-    languageOptions: { globals: globals.browser },
-    rules: {
-      'no-console': 'error', // Подсвечивает любые консоль логи ошибкой
-      'prefer-const': 'error',
-      'no-undef': 'error',
-      'no-unused-vars': 'warn',
-      'no-var': 'error',
+    {
+        files: ['**/*.{js,mjs,cjs}'],
+        plugins: { js, prettier },
+        languageOptions: {
+            globals: globals.browser,
+        },
+        rules: {
+            ...js.configs.recommended.rules,
+            'prettier/prettier': 'warn',
+            'no-unused-vars': 'warn',
+        },
     },
-  },
 ]);

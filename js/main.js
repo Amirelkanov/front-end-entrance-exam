@@ -1,1 +1,5 @@
-console.log('test');
+function hi() {
+    const a = 'hu';
+}
+
+const a = 'a';
