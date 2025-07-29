@@ -1,0 +1,9 @@
+@import 'layout.css';
+
+* {
+    box-sizing: border-box;
+}
+
+#app {
+    font-family: 'Poppins', sans-serif;
+}
