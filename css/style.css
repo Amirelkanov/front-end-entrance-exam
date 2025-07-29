@@ -2,9 +2,7 @@
 @import 'layout.css';
 @import 'cards.css';
 
-@import 'fst-row.css';
-@import 'snd-row.css';
-@import 'trd-row.css';
+@import 'rows/rows.css';
 
 * {
     margin: 0;
