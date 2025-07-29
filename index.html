@@ -38,11 +38,42 @@
 
                     <section class="card secondary with-title languages">
                         <p class="card-title">Languages</p>
-                        <ul class="languages-list">
-                            <li class="language-item">English</li>
-                            <li class="language-item">Hindi</li>
-                            <li class="language-item">Tamil</li>
-                        </ul>
+                        <div class="language-level-list">
+                            <ul class="languages-block">
+                                <li class="language-item">English</li>
+                                <li class="language-item">Malayalam</li>
+                                <li class="language-item">Hindi</li>
+                            </ul>
+                            <ul class="levels-block">
+                                <li class="language-level-item">
+                                    <input
+                                        type="range"
+                                        value="50"
+                                        min="0"
+                                        max="100"
+                                        oninput="this.style.setProperty('--input-value', `${this.value}%`)"
+                                    />
+                                </li>
+                                <li class="language-level-item">
+                                    <input
+                                        type="range"
+                                        value="50"
+                                        min="0"
+                                        max="100"
+                                        oninput="this.style.setProperty('--input-value', `${this.value}%`)"
+                                    />
+                                </li>
+                                <li class="language-level-item">
+                                    <input
+                                        type="range"
+                                        value="50"
+                                        min="0"
+                                        max="100"
+                                        oninput="this.style.setProperty('--input-value', `${this.value}%`)"
+                                    />
+                                </li>
+                            </ul>
+                        </div>
                     </section>
                 </div>
 
