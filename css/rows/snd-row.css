@@ -44,15 +44,10 @@
             background-color: var(--bg-accent-label);
             padding: 2px 6px;
             border-radius: 59px;
-            display: none;
         }
     }
 
     &.accent-1 {
-        .job-label {
-            display: block;
-        }
-
         --primary-text-color: var(--text-accent-1);
         --secondary-text-color: var(--text-accent-1-secondary);
     }

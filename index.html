@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <link rel="icon" type="image/svg+xml" href="/vite.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Vite App</title>
+        <title>Curriculum Vitae</title>
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,64 +23,67 @@
         <div id="app">
             <main class="cv-root">
                 <div class="row">
-                    <img
-                        src="./assests/images/avatar.png"
-                        alt="avatar"
-                        class="card img-card"
-                    />
+                    <figure class="card img-card">
+                        <img
+                            src="./assests/images/avatar.png"
+                            alt="Karthik SR profile photo"
+                        />
+                    </figure>
 
                     <section class="card secondary introduction">
-                        <div class="greeting">
+                        <p class="greeting">
                             Hello <span class="wave">👋🏻</span> I'm
-                        </div>
+                        </p>
 
-                        <div class="brief-info">
-                            <p class="name">Karthik SR</p>
-                            <p class="specialization">UX/UI Designer</p>
-                        </div>
+                        <hgroup class="brief-info">
+                            <h1 class="name">Karthik SR</h1>
+                            <h2 class="specialization">UX/UI Designer</h2>
+                        </hgroup>
                     </section>
 
                     <section class="card secondary with-title languages">
-                        <p class="card-title">Languages</p>
+                        <h3 class="card-title">Languages</h3>
                         <div class="language-level-list">
-                            <ul class="languages-block">
-                                <li class="language-item">English</li>
-                                <li class="language-item">Malayalam</li>
-                                <li class="language-item">Hindi</li>
-                            </ul>
-                            <ul class="levels-block">
-                                <li class="language-level-item">
-                                    <input
-                                        type="range"
-                                        value="100"
-                                        min="0"
-                                        max="100"
-                                    />
-                                </li>
-                                <li class="language-level-item">
-                                    <input
-                                        type="range"
-                                        value="100"
-                                        min="0"
-                                        max="100"
-                                    />
-                                </li>
-                                <li class="language-level-item">
-                                    <input
-                                        type="range"
-                                        value="77"
-                                        min="0"
-                                        max="100"
-                                    />
-                                </li>
-                            </ul>
+                            <div class="language-level-item">
+                                <label for="english-level">English</label>
+                                <input
+                                    id="english-level"
+                                    type="range"
+                                    value="100"
+                                    min="0"
+                                    max="100"
+                                    readonly
+                                />
+                            </div>
+                            <div class="language-level-item">
+                                <label for="malayalam-level">Malayalam</label>
+                                <input
+                                    id="malayalam-level"
+                                    type="range"
+                                    value="100"
+                                    min="0"
+                                    max="100"
+                                    readonly
+                                />
+                            </div>
+                            <div class="language-level-item">
+                                <label for="hindi-level">Hindi</label>
+                                <input
+                                    id="hindi-level"
+                                    type="range"
+                                    value="77"
+                                    min="0"
+                                    max="100"
+                                    readonly
+                                />
+                            </div>
                         </div>
                     </section>
                 </div>
 
                 <div class="row">
                     <section class="card secondary with-title experience">
-                        <p class="card-title">Experience</p>
+                        <h3 class="card-title">Experience</h3>
 
                         <div class="experience-list">
                             <article class="card accent-1 job-entry">
@@ -92,20 +95,20 @@
                                         Jun. 2023 - Present
                                     </time>
 
-                                    <div class="job-label">most recent</div>
+                                    <span class="job-label">most recent</span>
                                 </header>
 
                                 <div class="job-description">
-                                    <div class="job-info">
-                                        <p class="job-role">
+                                    <hgroup class="job-info">
+                                        <h4 class="job-role">
                                             Marketing Manager
-                                        </p>
+                                        </h4>
                                         <p class="job-about">
                                             Pankayam
                                             <span class="v-divider"></span>
                                             Full-time
                                         </p>
-                                    </div>
+                                    </hgroup>
                                     <ul class="responsibilities">
                                         <li class="job-responsibility">
                                             Strategy development and planning of
@@ -128,17 +131,15 @@
                                     >
                                         2017 - Present
                                     </time>
-
-                                    <div class="job-label">most recent</div>
                                 </header>
 
                                 <div class="job-description">
-                                    <div class="job-info">
-                                        <p class="job-role">
+                                    <hgroup class="job-info">
+                                        <h4 class="job-role">
                                             Graphic / Web designer
-                                        </p>
+                                        </h4>
                                         <p class="job-about">Freelance</p>
-                                    </div>
+                                    </hgroup>
                                     <ul class="responsibilities">
                                         <li class="job-responsibility">
                                             Development of internal projects
@@ -167,19 +168,19 @@
                                     >
                                         Sep. 2021 - Jun. 2023
                                     </time>
-
-                                    <div class="job-label">most recent</div>
                                 </header>
 
                                 <div class="job-description">
-                                    <div class="job-info">
-                                        <p class="job-role">Legal Assistant</p>
+                                    <hgroup class="job-info">
+                                        <h4 class="job-role">
+                                            Legal Assistant
+                                        </h4>
                                         <p class="job-about">
                                             Law Firm
                                             <span class="v-divider"></span>
                                             Intern
                                         </p>
-                                    </div>
+                                    </hgroup>
                                     <ul class="responsibilities">
                                         <li class="job-responsibility">
                                             Provide administrative support to
@@ -191,7 +192,7 @@
                                             witnesses etc.
                                         </li>
                                         <li class="job-responsibility">
-                                            repare case briefs and summarize
+                                            Prepare case briefs and summarize
                                             depositions, interrogatories and
                                             testimony
                                         </li>
@@ -202,102 +203,102 @@
                     </section>
 
                     <section class="card secondary with-title tools">
-                        <p class="card-title">Tools</p>
+                        <h3 class="card-title">Tools</h3>
 
                         <div class="tool-categories-list">
                             <section class="card tool-category">
-                                <p class="tool-category-title">Design</p>
+                                <h4 class="tool-category-title">Design</h4>
                                 <ul class="tools-grid" role="list">
                                     <li class="tool-item">
                                         <img
                                             src="./assests/icons/figma.svg"
-                                            alt="figma"
+                                            alt="Figma"
                                         />
                                     </li>
                                     <li class="tool-item">
                                         <img
                                             src="./assests/icons/adobe_photoshop.svg"
-                                            alt="adobe photoshop"
+                                            alt="Adobe Photoshop"
                                         />
                                     </li>
                                     <li class="tool-item">
                                         <img
                                             src="./assests/icons/adobe_illustrator.svg"
-                                            alt="adobe illustrator"
+                                            alt="Adobe Illustrator"
                                         />
                                     </li>
                                     <li class="tool-item">
                                         <img
                                             src="./assests/icons/adobe_premiere.svg"
-                                            alt="adobe premiere"
+                                            alt="Adobe Premiere"
                                         />
                                     </li>
                                     <li class="tool-item">
                                         <img
                                             src="./assests/icons/notion.svg"
-                                            alt="notion"
+                                            alt="Notion"
                                         />
                                     </li>
                                     <li class="tool-item">
                                         <img
                                             src="./assests/icons/g_meet.svg"
-                                            alt="google meet"
+                                            alt="Google Meet"
                                         />
                                     </li>
                                 </ul>
                             </section>
 
                             <section class="card tool-category">
-                                <p class="tool-category-title">no-code</p>
+                                <h4 class="tool-category-title">No-code</h4>
                                 <ul class="tools-grid" role="list">
                                     <li class="tool-item">
                                         <img
                                             src="./assests/icons/zapier.svg"
-                                            alt="zapier"
+                                            alt="Zapier"
                                         />
                                     </li>
                                     <li class="tool-item">
                                         <img
                                             src="./assests/icons/webflow.svg"
-                                            alt="webflow"
+                                            alt="Webflow"
                                         />
                                     </li>
                                     <li class="tool-item">
                                         <img
                                             src="./assests/icons/framer.svg"
-                                            alt="framer"
+                                            alt="Framer"
                                         />
                                     </li>
                                     <li class="tool-item">
                                         <img
-                                            src="./assests/icons/adobe_premiere.svg"
-                                            alt="wordpress"
+                                            src="./assests/icons/wordpress.svg"
+                                            alt="WordPress"
                                         />
                                     </li>
                                 </ul>
                             </section>
 
                             <section class="card tool-category">
-                                <p class="tool-category-title">
-                                    artoficial intelligence
-                                </p>
+                                <h4 class="tool-category-title">
+                                    Artificial Intelligence
+                                </h4>
                                 <ul class="tools-grid" role="list">
                                     <li class="tool-item">
                                         <img
                                             src="./assests/icons/chatgpt.svg"
-                                            alt="chatgpt"
+                                            alt="ChatGPT"
                                         />
                                     </li>
                                     <li class="tool-item">
                                         <img
                                             src="./assests/icons/copilot.svg"
-                                            alt="copilot"
+                                            alt="GitHub Copilot"
                                         />
                                     </li>
                                     <li class="tool-item">
                                         <img
                                             src="./assests/icons/midjourney.svg"
-                                            alt="midjourney"
+                                            alt="Midjourney"
                                         />
                                     </li>
                                 </ul>
@@ -308,20 +309,21 @@
 
                 <div class="row">
                     <section class="card secondary with-title education">
-                        <p class="card-title">Education</p>
+                        <h3 class="card-title">Education</h3>
 
                         <div class="education-grid">
                             <article class="card accent-1 education-item">
                                 <header class="education-header">
                                     <time datetime="2023">2023</time>
 
-                                    <i
+                                    <button
                                         class="fa-solid fa-heart like-button"
-                                    ></i>
+                                        aria-label="Like this education entry"
+                                    ></button>
                                 </header>
 
                                 <div class="education-info">
-                                    <p class="education-programm">UI/UX</p>
+                                    <h4 class="education-programm">UI/UX</h4>
                                     <p class="education-hashtags">
                                         #UX #UI #research #DesignSystem #Ui
                                         #wireframing #figma #Ux
@@ -338,13 +340,14 @@
                                     <time datetime="2017-01/2022-12">
                                         2017 - 2022
                                     </time>
-                                    <i
+                                    <button
                                         class="fa-regular fa-heart like-button"
-                                    ></i>
+                                        aria-label="Like this education entry"
+                                    ></button>
                                 </header>
 
                                 <div class="education-info">
-                                    <p class="education-programm">Law</p>
+                                    <h4 class="education-programm">Law</h4>
                                     <p class="education-hashtags">
                                         #law #legalStudies #contracts
                                         #internationalLaws
@@ -359,15 +362,16 @@
                             <article class="card education-item">
                                 <header class="education-header">
                                     <time datetime="2017">2017</time>
-                                    <i
+                                    <button
                                         class="fa-regular fa-heart like-button"
-                                    ></i>
+                                        aria-label="Like this education entry"
+                                    ></button>
                                 </header>
 
                                 <div class="education-info">
-                                    <p class="education-programm">
+                                    <h4 class="education-programm">
                                         Graphic design
-                                    </p>
+                                    </h4>
                                     <p class="education-hashtags">
                                         #branding #web #illustration #adobe
                                     </p>
@@ -382,7 +386,7 @@
 
                     <div class="trd-row-section-group">
                         <section class="card secondary with-title interests">
-                            <p class="card-title">Interests</p>
+                            <h3 class="card-title">Interests</h3>
                             <ul class="interests-list">
                                 <li class="interest-item">Branding</li>
                                 <li class="interest-item">Design</li>
@@ -394,19 +398,19 @@
                                 <li class="interest-item">Typography</li>
                                 <li class="interest-item">Social Networks</li>
                                 <li class="interest-item">Research</li>
-                                <li class="interest-item">Dron Pilot</li>
+                                <li class="interest-item">Drone Pilot</li>
                                 <li class="interest-item">Games</li>
                             </ul>
                         </section>
 
                         <section class="card dark with-title contact">
-                            <p class="card-title">
-                                Let's chat! I'm ready to work on excinting
+                            <h3 class="card-title">
+                                Let's chat! I'm ready to work on exciting
                                 projects
-                            </p>
-                            <p class="contact-info">
+                            </h3>
+                            <address class="contact-info">
                                 srkarthik.designscape@gmail.com
-                            </p>
+                            </address>
                         </section>
                     </div>
                 </div>
