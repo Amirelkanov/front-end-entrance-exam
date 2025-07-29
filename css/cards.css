@@ -1,0 +1,38 @@
+.card {
+    --bg-color: var(--bg-neutral-on-base);
+    --text-color: var(--text-primary);
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--bg-color);
+    color: var(--text-color);
+
+    width: 124px;
+    height: 124px;
+    border-radius: 12px;
+
+    &:not(.img-card) {
+        padding: 12px;
+    }
+
+    &.with-title {
+        row-gap: 16px;
+
+        .card-title {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 150%;
+        }
+    }
+
+    &.secondary {
+        --bg-color: var(--bg-neutral);
+        --text-color: var(--text-primary);
+    }
+
+    &.accent-1 {
+        --bg-color: var(--bg-accent-1);
+        --text-color: var(--text-accent-1);
+    }
+}

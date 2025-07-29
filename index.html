@@ -1,27 +1,275 @@
 <!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vite App</title>
 
-<head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./css/style.css" />
+    </head>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
-</head>
+    <body>
+        <div id="app">
+            <main class="cv-root">
+                <div class="row">
+                    <img
+                        src="./assests/images/avatar.png"
+                        alt="avatar"
+                        class="card img-card"
+                    />
 
-<body>
-    <div id="app">
-        <p>
-            v
-        </p>
-    </div>
-    <script type="module" src="./js/main.js"></script>
-</body>
+                    <section class="card secondary introduction">
+                        <div class="greeting">
+                            Hello <span class="wave">👋🏻</span> I'm
+                        </div>
 
+                        <div class="brief-info">
+                            <p class="name">Karthik SR</p>
+                            <p class="specialization">UX/UI Designer</p>
+                        </div>
+                    </section>
+
+                    <section class="card secondary with-title languages">
+                        <p class="card-title">Languages</p>
+                        <ul class="languages-list">
+                            <li class="language-item">English</li>
+                            <li class="language-item">Hindi</li>
+                            <li class="language-item">Tamil</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="row">
+                    <section class="card secondary with-title experience">
+                        <p class="card-title">Experience</p>
+
+                        <div class="experience-list">
+                            <article class="card accent-1 job-entry">
+                                <header class="job-header">
+                                    <time
+                                        class="job-period"
+                                        datetime="2023-06/P"
+                                    >
+                                        Jun. 2023 - Present
+                                    </time>
+                                    <!-- TODO label recent (его можно для first-child'а) -->
+                                </header>
+
+                                <div class="job-description">
+                                    <div class="job-info">
+                                        <p class="job-role">
+                                            Marketing Manager
+                                        </p>
+                                        <p class="job-about">
+                                            Pankayam | Full-time
+                                        </p>
+                                    </div>
+                                    <ul class="responsibilities">
+                                        <li>
+                                            Strategy development and planning of
+                                            campaigns that promote the business
+                                            and generate genuine traffic
+                                        </li>
+                                        <li>
+                                            SEO Content Creation for blogs,
+                                            Website, Social media
+                                        </li>
+                                    </ul>
+                                </div>
+                            </article>
+
+                            <article class="card job-entry">
+                                <header class="job-header">
+                                    <time
+                                        class="job-period"
+                                        datetime="2017-01/P"
+                                    >
+                                        2017 - Present
+                                    </time>
+                                    <!-- TODO label recent (его можно для first-child'а) -->
+                                </header>
+
+                                <div class="job-description">
+                                    <div class="job-info">
+                                        <p class="job-role">
+                                            Graphic / Web designer
+                                        </p>
+                                        <p class="job-about">Freelance</p>
+                                    </div>
+                                    <ul class="responsibilities">
+                                        <li>
+                                            Development of internal projects
+                                            from scratch, product design of
+                                            brands
+                                        </li>
+                                        <li>
+                                            Landing page, webapps and hybrid
+                                            apps
+                                        </li>
+                                        <li>
+                                            Coordinating with outside agencies,
+                                            art services, web designer,
+                                            marketing, printers, and colleagues
+                                            as necessary
+                                        </li>
+                                    </ul>
+                                </div>
+                            </article>
+
+                            <article class="card job-entry">
+                                <header class="job-header">
+                                    <time
+                                        class="job-period"
+                                        datetime="2021-09/2023-06"
+                                    >
+                                        Sep. 2021 - Jun. 2023
+                                    </time>
+                                    <!-- TODO label recent (его можно для first-child'а) -->
+                                </header>
+
+                                <div class="job-description">
+                                    <div class="job-info">
+                                        <p class="job-role">Legal Assistant</p>
+                                        <p class="job-about">
+                                            Law Firm <span>|</span> Intern
+                                        </p>
+                                    </div>
+                                    <ul class="responsibilities">
+                                        <li>
+                                            Provide administrative support to
+                                            lawyer and enhance office
+                                            effectiveness
+                                        </li>
+                                        <li>
+                                            Handle communication with clients,
+                                            witnesses etc.
+                                        </li>
+                                        <li>
+                                            repare case briefs and summarize
+                                            depositions, interrogatories and
+                                            testimony
+                                        </li>
+                                    </ul>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section class="card secondary with-title tools">
+                        <p class="card-title">Tools</p>
+
+                        <div class="tool-categories-list">
+                            <section class="card tool-category">
+                                <p class="tool-category-title">Design</p>
+                                <ul class="tools-grid" role="list">
+                                    <li class="tool-item">
+                                        <img
+                                            src="./assests/icons/figma.svg"
+                                            alt="figma"
+                                        />
+                                    </li>
+                                    <li class="tool-item">
+                                        <img
+                                            src="./assests/icons/adobe_photoshop.svg"
+                                            alt="adobe photoshop"
+                                        />
+                                    </li>
+                                    <li class="tool-item">
+                                        <img
+                                            src="./assests/icons/adobe_illustrator.svg"
+                                            alt="adobe illustrator"
+                                        />
+                                    </li>
+                                    <li class="tool-item">
+                                        <img
+                                            src="./assests/icons/adobe_premiere.svg"
+                                            alt="adobe premiere"
+                                        />
+                                    </li>
+                                    <li class="tool-item">
+                                        <img
+                                            src="./assests/icons/notion.svg"
+                                            alt="notion"
+                                        />
+                                    </li>
+                                    <li class="tool-item">
+                                        <img
+                                            src="./assests/icons/g_meet.svg"
+                                            alt="google meet"
+                                        />
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section class="card tool-category">
+                                <p class="tool-category-title">no-code</p>
+                                <ul class="tools-grid" role="list">
+                                    <li class="tool-item">
+                                        <img
+                                            src="./assests/icons/zapier.svg"
+                                            alt="zapier"
+                                        />
+                                    </li>
+                                    <li class="tool-item">
+                                        <img
+                                            src="./assests/icons/webflow.svg"
+                                            alt="webflow"
+                                        />
+                                    </li>
+                                    <li class="tool-item">
+                                        <img
+                                            src="./assests/icons/framer.svg"
+                                            alt="framer"
+                                        />
+                                    </li>
+                                    <li class="tool-item">
+                                        <img
+                                            src="./assests/icons/adobe_premiere.svg"
+                                            alt="wordpress"
+                                        />
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section class="card tool-category">
+                                <p class="tool-category-title">
+                                    artoficial intelligence
+                                </p>
+                                <ul class="tools-grid" role="list">
+                                    <li class="tool-item">
+                                        <img
+                                            src="./assests/icons/chatgpt.svg"
+                                            alt="chatgpt"
+                                        />
+                                    </li>
+                                    <li class="tool-item">
+                                        <img
+                                            src="./assests/icons/copilot.svg"
+                                            alt="copilot"
+                                        />
+                                    </li>
+                                    <li class="tool-item">
+                                        <img
+                                            src="./assests/icons/midjourney.svg"
+                                            alt="midjourney"
+                                        />
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="row"></div>
+            </main>
+        </div>
+        <script type="module" src="./js/main.js"></script>
+    </body>
 </html>

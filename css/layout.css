@@ -1,1 +1,24 @@
+#app {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    margin: 0 auto;
+    width: 595px;
 
+    padding: 15px 20px;
+}
+
+.cv-root {
+    background-color: grey;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}

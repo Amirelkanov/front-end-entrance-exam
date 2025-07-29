@@ -1,0 +1,130 @@
+.experience {
+    width: 411px;
+    height: 359px;
+}
+
+.experience-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.card.job-entry {
+    padding: 8px;
+}
+
+.job-entry {
+    height: fit-content;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 8px;
+
+    .job-header {
+        display: flex;
+        justify-content: space-between;
+
+        .job-period {
+            font-size: 8px;
+            font-weight: 500;
+            line-height: 150%;
+        }
+    }
+
+    .job-description {
+        display: flex;
+        gap: 8px;
+
+        .job-info {
+            display: flex;
+            flex-direction: column;
+            width: 124px;
+
+            .job-role {
+                font-size: 10px;
+                line-height: 150%;
+                font-weight: 500;
+            }
+
+            .job-about {
+                font-size: 8px;
+                line-height: 150%;
+                font-weight: 400;
+            }
+        }
+
+        .responsibilities {
+            font-size: 8px;
+            line-height: 150%;
+            font-weight: 400;
+            width: 239px;
+            list-style: none;
+
+            li {
+                position: relative;
+                padding-inline-start: 1.2em;
+            }
+
+            li::before {
+                content: '•';
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+    }
+}
+
+.tools {
+    row-gap: 14px;
+    height: 359px;
+}
+
+.tool-categories-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 12px;
+
+    .tool-category {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+        height: fit-content;
+        border-radius: 6px;
+        padding: 16px 11px;
+        position: relative;
+
+        .tool-category-title {
+            position: absolute;
+            top: -5px;
+            padding: 2px 6px;
+            color: var(--text-accent-1);
+            background-color: var(--bg-dark);
+
+            font-weight: 500;
+            font-size: 5px;
+            line-height: 142%;
+            border-radius: 59px;
+        }
+
+        .tools-grid {
+            display: grid;
+
+            grid-template-columns: max-content max-content;
+            justify-items: center;
+            align-items: center;
+            gap: 14px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            .tool-item {
+                display: contents;
+            }
+        }
+    }
+}
