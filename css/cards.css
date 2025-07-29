@@ -11,9 +11,10 @@
     width: 124px;
     height: 124px;
     border-radius: 12px;
+    padding: 12px;
 
-    &:not(.img-card) {
-        padding: 12px;
+    &.img-card {
+        padding: 0;
     }
 
     &.with-title {
@@ -33,6 +34,11 @@
 
     &.accent-1 {
         --bg-color: var(--bg-accent-1);
+        --text-color: var(--text-accent-1);
+    }
+
+    &.dark {
+        --bg-color: var(--bg-dark);
         --text-color: var(--text-accent-1);
     }
 }
