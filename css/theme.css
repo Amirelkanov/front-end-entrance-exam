@@ -4,15 +4,15 @@
     --text-accent-1: #ffffff;
     --text-accent-1-secondary: #ebf9f2;
     --text-accent-2: #ddf163;
-    --text-neutral-on-base-accent: #149063;
     --text-accent-label: #ddf163;
+    --text-neutral-on-base-accent: #149063;
 
     --bg-neutral-on-base: #ffffff;
     --bg-neutral: #f0f0f0;
     --bg-neutral-secondary: #e5e5e5;
+    --bg-dark: #000000;
     --bg-accent-1: #28d979;
     --bg-accent-2: #7e731266;
-    --bg-dark: #000000;
     --bg-accent-3: #f6ed1e;
     --bg-accent-label: #7e731266;
 }

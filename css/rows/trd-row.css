@@ -11,10 +11,6 @@
     grid-template-columns: auto auto;
     gap: 12px 16px;
 
-    .education-item.accent-1 {
-        --hashtags-color: var(--text-accent-1-secondary);
-    }
-
     .education-item {
         width: 116px;
         height: fit-content;
@@ -39,6 +35,10 @@
                 cursor: pointer;
                 color: var(--bg-accent-3);
             }
+        }
+
+        &.accent-1 {
+            --hashtags-color: var(--text-accent-1-secondary);
         }
 
         .education-info {
