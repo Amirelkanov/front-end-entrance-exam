@@ -2,6 +2,11 @@
     width: 411px;
     height: 359px;
     padding-bottom: 10px;
+
+    @media screen and (max-width: 600px) {
+        height: auto;
+        width: 280px;
+    }
 }
 
 .experience-list {
@@ -51,6 +56,7 @@
 
     .job-description {
         display: flex;
+        flex-wrap: wrap;
         gap: 8px;
 
         .job-info {
@@ -102,13 +108,18 @@
 .tools {
     row-gap: 14px;
     height: 359px;
+
+    @media screen and (max-width: 600px) {
+        width: auto;
+        height: auto;
+    }
 }
 
 .tool-categories-list {
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 12px;
+    gap: 12px;
 
     .tool-category {
         display: flex;
@@ -146,5 +157,9 @@
                 display: contents;
             }
         }
+    }
+
+    @media screen and (max-width: 600px) {
+        flex-direction: row;
     }
 }
