@@ -4,39 +4,44 @@ function updateRangeInput(rangeInput) {
     rangeInput.style.setProperty('--input-value', `${percent}%`);
 }
 
-document
-    .querySelectorAll(
-        'h1, h2, h3, h4, p, time, address, label, span, li.text-content-item'
-    )
-    .forEach((textElement) => {
-        textElement.addEventListener('click', (event) => {
-            event.target.focus();
-            event.target.contentEditable = 'true';
-        });
-
-        // TODO: может, не очень
-        textElement.addEventListener('keydown', (event) => {
-            if (
-                document.activeElement === event.target &&
-                event.key === 'Enter'
-            ) {
-                event.target.blur();
-                event.target.contentEditable = 'false';
-                event.preventDefault();
-            }
-        });
+function enableTextElementEditing(textElement) {
+    textElement.addEventListener('click', (event) => {
+        event.target.focus();
+        event.target.contentEditable = 'true';
     });
 
-document.querySelectorAll('.icon-button.like-button').forEach((likeBtn) => {
-    likeBtn.addEventListener('click', (event) => {
-        event.target.classList.toggle('fa-solid');
-        event.target.classList.toggle('fa-regular');
-
-        let closestEducationItem = event.target.closest('.education-item');
-        if (closestEducationItem) {
-            closestEducationItem.classList.toggle('accent-1');
+    textElement.addEventListener('keydown', (event) => {
+        if (document.activeElement === event.target && event.key === 'Enter') {
+            event.target.blur();
+            event.target.contentEditable = 'false';
+            event.preventDefault();
         }
     });
-});
+}
 
-export { updateRangeInput };
+function createRipple(event) {
+    event.stopPropagation();
+
+    const element = event.currentTarget;
+    const circle = document.createElement('span');
+    const diameter = Math.max(element.clientWidth, element.clientHeight);
+    const radius = diameter / 2;
+
+    circle.style.width = circle.style.height = `${diameter}px`;
+    circle.classList.add('ripple');
+
+    const rect = element.getBoundingClientRect();
+    const clickX = event.clientX - rect.left;
+    const clickY = event.clientY - rect.top;
+    circle.style.left = `${clickX - radius}px`;
+    circle.style.top = `${clickY - radius}px`;
+
+    // Clear previous ripple if exists
+    const existing = element.querySelector('.ripple');
+    if (existing) existing.remove();
+
+    element.appendChild(circle);
+    circle.addEventListener('animationend', () => circle.remove());
+}
+
+export { updateRangeInput, enableTextElementEditing, createRipple };
