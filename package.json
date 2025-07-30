@@ -21,5 +21,8 @@
         "husky": "^9.1.7",
         "prettier": "3.6.2",
         "vite": "^7.0.4"
+    },
+    "dependencies": {
+        "html2pdf.js": "^0.10.3"
     }
 }

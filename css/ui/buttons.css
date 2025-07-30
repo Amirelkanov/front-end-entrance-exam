@@ -1,0 +1,39 @@
+.button {
+    --button-bg: var(--bg-neutral-on-base);
+    --button-bg-hover: var(--bg-neutral);
+    --button-bg-active: var(--bg-neutral-secondary);
+    --button-text: var(--text-primary);
+
+    background-color: var(--button-bg);
+    color: var(--button-text);
+
+    cursor: pointer;
+    border: thin solid transparent;
+
+    &.floating-action-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        font-size: 1em;
+
+        --button-bg: var(--bg-accent-1);
+        --button-bg-hover: var(--bg-accent-1-hover);
+        --button-bg-active: var(--bg-accent-1-active);
+        --button-text: var(--text-accent-1);
+    }
+
+    &:not(:disabled) {
+        @media screen and (hover: hover) {
+            &:hover {
+                background-color: var(--button-bg-hover);
+            }
+        }
+
+        &:active {
+            background-color: var(--button-bg-active);
+        }
+    }
+}

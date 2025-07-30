@@ -1,9 +1,8 @@
 @import 'theme.css';
-@import 'layout.css';
-@import 'cards.css';
-@import 'labels.css';
+@import 'ui/index.css';
 
-@import 'rows/rows.css';
+@import 'layout.css';
+@import 'rows/index.css';
 
 * {
     margin: 0;
