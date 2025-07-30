@@ -32,6 +32,7 @@
 Ссылка на сайт с проектом: https://amirelkanov.github.io/front-end-entrance-exam/
 
 Демо:
+
 https://github.com/user-attachments/assets/63e66dbf-69df-47c2-b0f0-30266a61a887
 
 Была создана веб-страница на основе первого шаблона из двух предложенных. Добавлена следующая функциональность:
