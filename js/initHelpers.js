@@ -1,9 +1,3 @@
-function updateRangeInput(rangeInput) {
-    // eslint-disable-next-line
-    const percent = ((rangeInput.value - rangeInput.min) / (rangeInput.max - rangeInput.min)) * 100;
-    rangeInput.style.setProperty('--input-value', `${percent}%`);
-}
-
 function enableTextElementEditing(textElement) {
     textElement.addEventListener('click', (event) => {
         event.target.focus();
@@ -44,4 +38,4 @@ function createRipple(event) {
     circle.addEventListener('animationend', () => circle.remove());
 }
 
-export { updateRangeInput, enableTextElementEditing, createRipple };
+export { enableTextElementEditing, createRipple };
