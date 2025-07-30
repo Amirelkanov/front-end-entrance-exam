@@ -5,15 +5,17 @@ function updateRangeInput(rangeInput) {
 }
 
 document
-    .querySelectorAll('h1, h2, h3, h4, p, time, address, label, span')
-    .forEach((element) => {
-        element.addEventListener('click', (event) => {
+    .querySelectorAll(
+        'h1, h2, h3, h4, p, time, address, label, span, li.text-content-item'
+    )
+    .forEach((textElement) => {
+        textElement.addEventListener('click', (event) => {
             event.target.focus();
             event.target.contentEditable = 'true';
         });
 
         // TODO: может, не очень
-        element.addEventListener('keydown', (event) => {
+        textElement.addEventListener('keydown', (event) => {
             if (
                 document.activeElement === event.target &&
                 event.key === 'Enter'
@@ -24,5 +26,17 @@ document
             }
         });
     });
+
+document.querySelectorAll('.icon-button.like-button').forEach((likeBtn) => {
+    likeBtn.addEventListener('click', (event) => {
+        event.target.classList.toggle('fa-solid');
+        event.target.classList.toggle('fa-regular');
+
+        let closestEducationItem = event.target.closest('.education-item');
+        if (closestEducationItem) {
+            closestEducationItem.classList.toggle('accent-1');
+        }
+    });
+});
 
 export { updateRangeInput };

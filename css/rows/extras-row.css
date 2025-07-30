@@ -29,10 +29,7 @@
             line-height: 150%;
 
             .like-button {
-                border: none;
-                background: none;
-                outline: none;
-                cursor: pointer;
+                font-size: inherit;
                 color: var(--bg-accent-3);
             }
         }

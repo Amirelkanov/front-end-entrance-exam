@@ -9,6 +9,7 @@
 
     cursor: pointer;
     border: thin solid transparent;
+    outline: none;
 
     &.floating-action-button {
         position: fixed;
@@ -23,6 +24,12 @@
         --button-bg-hover: var(--bg-accent-1-hover);
         --button-bg-active: var(--bg-accent-1-active);
         --button-text: var(--text-accent-1);
+    }
+
+    &.icon-button {
+        --button-bg: none;
+        --button-bg-hover: none;
+        --button-bg-active: none;
     }
 
     &:not(:disabled) {

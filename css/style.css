@@ -28,9 +28,10 @@ p,
 time,
 address,
 label,
-span {
+span,
+li.text-content-item {
     &:hover {
-        border: 1px solid purple;
+        border: 1px solid var(--bg-contrast);
         border-radius: 2px;
     }
 }
