@@ -8,10 +8,15 @@ function onChangeRangeInput(rangeInput) {
 }
 
 function onLike(event) {
-    event.target.classList.toggle('fa-solid');
-    event.target.classList.toggle('fa-regular');
+    const button = event.currentTarget;
+    const icon = button.querySelector('i');
 
-    const closestEducationItem = event.target.closest('.education-item');
+    if (icon) {
+        icon.classList.toggle('fa-solid');
+        icon.classList.toggle('fa-regular');
+    }
+
+    const closestEducationItem = button.closest('.education-item');
     if (closestEducationItem) {
         closestEducationItem.classList.toggle('accent-1');
     }
