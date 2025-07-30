@@ -4,4 +4,25 @@ function updateRangeInput(rangeInput) {
     rangeInput.style.setProperty('--input-value', `${percent}%`);
 }
 
+document
+    .querySelectorAll('h1, h2, h3, h4, p, time, address, label, span')
+    .forEach((element) => {
+        element.addEventListener('click', (event) => {
+            event.target.focus();
+            event.target.contentEditable = 'true';
+        });
+
+        // TODO: может, не очень
+        element.addEventListener('keydown', (event) => {
+            if (
+                document.activeElement === event.target &&
+                event.key === 'Enter'
+            ) {
+                event.target.blur();
+                event.target.contentEditable = 'false';
+                event.preventDefault();
+            }
+        });
+    });
+
 export { updateRangeInput };

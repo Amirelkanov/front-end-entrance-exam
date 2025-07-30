@@ -1,6 +1,7 @@
 @import 'theme.css';
 @import 'layout.css';
 @import 'cards.css';
+@import 'labels.css';
 
 @import 'rows/rows.css';
 
@@ -18,4 +19,19 @@ body {
     min-height: 100%;
     margin: 0;
     display: flex;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+time,
+address,
+label,
+span {
+    &:hover {
+        border: 1px solid purple;
+        border-radius: 2px;
+    }
 }

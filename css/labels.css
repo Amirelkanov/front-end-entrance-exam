@@ -1,0 +1,18 @@
+.label {
+    --bg-color: var(--bg-neutral-on-base);
+    --text-color: var(--text-primary);
+
+    background-color: var(--bg-color);
+    color: var(--text-color);
+
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 150%;
+    padding: 4px 10px;
+    border-radius: 40px;
+
+    &.accent {
+        color: var(--text-accent-label);
+        background-color: var(--bg-accent-label);
+    }
+}
