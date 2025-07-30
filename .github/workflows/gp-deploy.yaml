@@ -4,8 +4,13 @@ on:
     push:
         branches: ['master']
 
+permissions:
+    contents: write
+    pages: write
+    id-token: write
+
 jobs:
-    build:
+    build-and-deploy:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout repository
@@ -30,24 +35,7 @@ jobs:
             - name: Build
               run: npm run build
 
-            - name: Upload artifact
-              uses: actions/upload-pages-artifact@v3
-              with:
-                  path: ./dist
-
-    deploy:
-        needs: build
-        permissions:
-            contents: write
-            pages: write
-            id-token: write
-        environment:
-            name: github-pages
-            url: ${{ steps.deployment.outputs.page_url }}
-        runs-on: ubuntu-latest
-        steps:
             - name: Deploy to GitHub Pages
-              id: deployment
               uses: peaceiris/actions-gh-pages@v4
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
