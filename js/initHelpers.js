@@ -1,14 +1,40 @@
 function enableTextElementEditing(textElement) {
     textElement.addEventListener('click', (event) => {
-        event.target.focus();
-        event.target.contentEditable = 'true';
+        event.preventDefault();
+
+        const textElem = event.target;
+
+        textElem.focus();
+        textElem.contentEditable = 'true';
+        textElem.style.maxWidth = `${1.2 * parseFloat(getComputedStyle(textElem).width)}px`;
+        textElem.style.maxHeight = getComputedStyle(textElem).height;
+        textElem.style.overflow = 'hidden auto';
+
+        textElem.classList.add('styled-scrollbar');
     });
 
     textElement.addEventListener('keydown', (event) => {
-        if (document.activeElement === event.target && event.key === 'Enter') {
-            event.target.blur();
-            event.target.contentEditable = 'false';
+        const textElem = event.target;
+
+        if (document.activeElement === textElem && event.key === 'Enter') {
             event.preventDefault();
+
+            textElem.blur();
+        }
+    });
+
+    textElement.addEventListener('blur', (event) => {
+        event.preventDefault();
+
+        const textElem = event.target;
+        textElem.contentEditable = 'false';
+
+        textElem.scrollTop = 0;
+        textElem.style.textOverflow = 'ellipsis';
+
+        if (!textElem.classList.contains('text-content-item')) {
+            textElem.style.overflow = 'hidden';
+            textElem.classList.remove('styled-scrollbar');
         }
     });
 }
@@ -40,9 +66,9 @@ function createRipple(event) {
     const ripple = document.createElement('span');
     ripple.className = 'ripple';
 
-    ripple.style.setProperty('--x', `${x}px`);
-    ripple.style.setProperty('--y', `${y}px`);
-    ripple.style.setProperty('--size', `${maxRadius}px`);
+    ripple.style.setProperty('--x', `${x} px`);
+    ripple.style.setProperty('--y', `${y} px`);
+    ripple.style.setProperty('--size', `${maxRadius} px`);
 
     element.appendChild(ripple);
     ripple.addEventListener('animationend', () => ripple.remove());

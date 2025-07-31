@@ -106,7 +106,6 @@
 }
 
 .tools {
-    row-gap: 14px;
     height: 359px;
 
     @media screen and (max-width: 600px) {

@@ -29,9 +29,9 @@
         row-gap: 16px;
 
         .card-title {
+            min-height: 1.5em;
             font-weight: 500;
             font-size: 14px;
-            line-height: 150%;
         }
     }
 
