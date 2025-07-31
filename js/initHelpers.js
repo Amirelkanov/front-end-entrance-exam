@@ -6,7 +6,8 @@ function enableTextElementEditing(textElement) {
 
         textElem.focus();
         textElem.contentEditable = 'true';
-        textElem.style.maxWidth = `${1.2 * parseFloat(getComputedStyle(textElem).width)}px`;
+
+        textElem.style.maxWidth = getComputedStyle(textElem).width;
         textElem.style.maxHeight = getComputedStyle(textElem).height;
         textElem.style.overflow = 'hidden auto';
 
@@ -66,9 +67,9 @@ function createRipple(event) {
     const ripple = document.createElement('span');
     ripple.className = 'ripple';
 
-    ripple.style.setProperty('--x', `${x}px`);
-    ripple.style.setProperty('--y', `${y}px`);
-    ripple.style.setProperty('--size', `${maxRadius}px`);
+    ripple.style.setProperty('--x', `${x} px`);
+    ripple.style.setProperty('--y', `${y} px`);
+    ripple.style.setProperty('--size', `${maxRadius} px`);
 
     element.appendChild(ripple);
     ripple.addEventListener('animationend', () => ripple.remove());
