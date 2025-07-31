@@ -67,9 +67,9 @@ function createRipple(event) {
     const ripple = document.createElement('span');
     ripple.className = 'ripple';
 
-    ripple.style.setProperty('--x', `${x} px`);
-    ripple.style.setProperty('--y', `${y} px`);
-    ripple.style.setProperty('--size', `${maxRadius} px`);
+    ripple.style.setProperty('--x', `${x}px`);
+    ripple.style.setProperty('--y', `${y}px`);
+    ripple.style.setProperty('--size', `${maxRadius}px`);
 
     element.appendChild(ripple);
     ripple.addEventListener('animationend', () => ripple.remove());
