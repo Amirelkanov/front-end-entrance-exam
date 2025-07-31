@@ -1,4 +1,7 @@
 .styled-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: var(--bg-neutral-secondary) rgba(255, 255, 255, 0.9);
+
     &::-webkit-scrollbar {
         width: 5px;
         height: 5px;
@@ -10,21 +13,6 @@
     }
 
     &::-webkit-scrollbar-track {
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: 5px;
-    }
-
-    &::-moz-scrollbar {
-        width: 5px;
-        height: 5px;
-    }
-
-    &::-moz-scrollbar-thumb {
-        background-color: var(--bg-neutral-secondary);
-        border-radius: 5px;
-    }
-
-    &::-moz-scrollbar-track {
         background: rgba(255, 255, 255, 0.9);
         border-radius: 5px;
     }
