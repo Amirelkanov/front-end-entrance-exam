@@ -13,29 +13,39 @@ function enableTextElementEditing(textElement) {
     });
 }
 
+function calculateMaxDist(x, y, width, height) {
+    // Max dist from point to each corner
+    return Math.max(
+        Math.sqrt(x * x + y * y),
+        Math.sqrt((width - x) ** 2 + y * y),
+        Math.sqrt(x * x + (height - y) ** 2),
+        Math.sqrt((width - x) ** 2 + (height - y) ** 2)
+    );
+}
+
 function createRipple(event) {
     event.stopPropagation();
 
     const element = event.currentTarget;
-    const circle = document.createElement('span');
-    const diameter = Math.max(element.clientWidth, element.clientHeight);
-    const radius = diameter / 2;
-
-    circle.style.width = circle.style.height = `${diameter}px`;
-    circle.classList.add('ripple');
-
-    const rect = element.getBoundingClientRect();
-    const clickX = event.clientX - rect.left;
-    const clickY = event.clientY - rect.top;
-    circle.style.left = `${clickX - radius}px`;
-    circle.style.top = `${clickY - radius}px`;
 
     // Clear previous ripple if exists
-    const existing = element.querySelector('.ripple');
-    if (existing) existing.remove();
+    const existingRipple = element.querySelector('.ripple');
+    if (existingRipple) existingRipple.remove();
 
-    element.appendChild(circle);
-    circle.addEventListener('animationend', () => circle.remove());
+    const rect = element.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    const maxRadius = calculateMaxDist(x, y, rect.width, rect.height);
+
+    const ripple = document.createElement('span');
+    ripple.className = 'ripple';
+
+    ripple.style.setProperty('--x', `${x}px`);
+    ripple.style.setProperty('--y', `${y}px`);
+    ripple.style.setProperty('--size', `${maxRadius}px`);
+
+    element.appendChild(ripple);
+    ripple.addEventListener('animationend', () => ripple.remove());
 }
 
 export { enableTextElementEditing, createRipple };

@@ -41,3 +41,4 @@ https://github.com/user-attachments/assets/63e66dbf-69df-47c2-b0f0-30266a61a887
 * Плавающая кнопка "Скачать в PDF" для скачивания резюме.
 * Адаптация под мобильные устройства.
 * Эффект "Material Wave" при взаимодействии с карточками.
+* На Github Pages выложен Production Build этого проекта _(вообще настроен workflow, который при commit'е в master автоматически собирает и выкладывает в gh-pages)_.

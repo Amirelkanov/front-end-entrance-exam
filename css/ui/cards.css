@@ -3,7 +3,6 @@
     --text-color: var(--text-primary);
 
     position: relative;
-    overflow: hidden;
 
     display: flex;
     flex-direction: column;
