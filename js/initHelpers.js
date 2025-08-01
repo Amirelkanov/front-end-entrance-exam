@@ -10,12 +10,7 @@ function enableTextElementEditing(textElement) {
         textElem.style.maxWidth = getComputedStyle(textElem).width;
         textElem.style.maxHeight = getComputedStyle(textElem).height;
         textElem.style.textOverflow = 'unset';
-
         textElem.style.overflow = 'hidden auto';
-
-        if (!textElem.classList.contains('text-content-item')) {
-            textElem.style.whiteSpace = 'nowrap';
-        }
 
         textElem.classList.add('styled-scrollbar');
     });
