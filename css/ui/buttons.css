@@ -4,12 +4,13 @@
     --button-bg-active: var(--bg-neutral-secondary);
     --button-text: var(--text-primary);
 
-    background-color: var(--button-bg);
-    color: var(--button-text);
+    border: thin solid transparent;
 
     cursor: pointer;
-    border: thin solid transparent;
     outline: none;
+
+    background-color: var(--button-bg);
+    color: var(--button-text);
 
     @media screen and (prefers-reduced-motion: no-preference) {
         transition: background-color 0.3s ease-in-out;
@@ -20,8 +21,11 @@
         bottom: 20px;
         right: 20px;
         width: 50px;
+
         height: 50px;
+
         border-radius: 50%;
+
         font-size: 1em;
 
         --button-bg: var(--bg-accent-1);
