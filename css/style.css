@@ -23,6 +23,9 @@ body {
 }
 
 .editable-text-content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+
     @media screen and (prefers-reduced-motion: no-preference) {
         transition:
             box-shadow 0.3s linear,

@@ -11,7 +11,6 @@ export function enableTextElementEditing(textElement) {
         textElem.style.maxWidth = `${textElem.getBoundingClientRect().width}px`;
         textElem.style.maxHeight = `${textElem.getBoundingClientRect().height}px`;
         textElem.style.textOverflow = '';
-        textElem.style.overflow = 'hidden';
 
         textElem.focus();
     });
@@ -46,10 +45,9 @@ export function enableTextElementEditing(textElement) {
 
     textElement.addEventListener('blur', (event) => {
         const textElem = event.target;
-        textElem.contentEditable = 'false';
+        textElem.removeAttribute('contenteditable');
 
         textElem.scrollTop = 0;
         textElem.scrollLeft = 0;
-        textElem.style.textOverflow = 'ellipsis';
     });
 }
