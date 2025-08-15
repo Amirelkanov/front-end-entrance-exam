@@ -1,44 +1,43 @@
-import {
-    createRipple,
-    enableTextElementEditing,
-    loadInitialContent,
-} from './initHelpers.js';
-
-import initialContentConfig from '../public/assets/configs/initialContentConfig.json';
+import { enableTextElementEditing } from './textEditing.js';
+import { loadInitialContent } from './config.js';
+import { createRipple } from './animation.js';
 
 import { onChangeRangeInput, onLike, onDownloadPDF } from './handlers.js';
 
 function main() {
-    document.addEventListener('DOMContentLoaded', () => {
-        loadInitialContent(initialContentConfig);
+    document.addEventListener('DOMContentLoaded', async () => {
+        const config = await loadInitialContent();
+
+        const textElementsSelectors = Object.entries(
+            config['text-elements-content']
+        )
+            .map(([id, value]) => {
+                let elementSelector;
+                if (value.items) {
+                    elementSelector = value.itemsClasses
+                        .map((className) => `.${className}`)
+                        .join('');
+                } else {
+                    elementSelector = `#${id}`;
+                }
+
+                return elementSelector;
+            })
+            .join(', ');
+
         document
-            .querySelectorAll(
-                Object.entries(initialContentConfig)
-                    .map(([id, value]) => {
-                        let elementSelector;
-                        if (value.items) {
-                            elementSelector = value.itemsClasses
-                                .map((className) => `.${className}`)
-                                .join('');
-                        } else {
-                            elementSelector = `#${id}`;
-                        }
-
-                        return elementSelector;
-                    })
-                    .join(', ')
-            )
+            .querySelectorAll(textElementsSelectors)
             .forEach(enableTextElementEditing);
-    });
 
-    document
-        .querySelectorAll('.language-level-inputs .input')
-        .forEach((input) => {
-            input.addEventListener('input', (event) =>
-                onChangeRangeInput(event.target)
-            );
-            onChangeRangeInput(input);
-        });
+        document
+            .querySelectorAll('.language-level-inputs .input')
+            .forEach((input) => {
+                input.addEventListener('input', (event) =>
+                    onChangeRangeInput(event.target)
+                );
+                onChangeRangeInput(input);
+            });
+    });
 
     document
         .querySelectorAll('.icon-button.like-button')

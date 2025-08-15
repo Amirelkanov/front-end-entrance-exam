@@ -5,11 +5,16 @@ function onChangeRangeInput(rangeInput) {
         '--input-value',
         `${((rangeInput.value - rangeInput.min) / (rangeInput.max - rangeInput.min)) * 100}%`
     );
+
+    // Update config
+    const config = JSON.parse(localStorage.getItem('initialContentConfig'));
+    config['language-levels'][rangeInput.id] = rangeInput.value;
+    localStorage.setItem('initialContentConfig', JSON.stringify(config));
 }
 
 function onLike(event) {
     const button = event.currentTarget;
-    const icon = button.querySelector('i');
+    const icon = button.firstElementChild;
 
     if (icon) {
         icon.classList.toggle('fa-solid');
@@ -20,6 +25,18 @@ function onLike(event) {
     if (closestEducationItem) {
         closestEducationItem.classList.toggle('accent-1');
     }
+
+    // Update config
+    const config = JSON.parse(localStorage.getItem('initialContentConfig'));
+
+    const index = Array.from(closestEducationItem.parentNode.children).indexOf(
+        closestEducationItem
+    );
+
+    const likedItemsIndexes = config['education-grid-items-liked'];
+    likedItemsIndexes[index] = !likedItemsIndexes[index];
+
+    localStorage.setItem('initialContentConfig', JSON.stringify(config));
 }
 
 function onDownloadPDF() {
