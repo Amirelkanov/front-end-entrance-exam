@@ -1,22 +1,35 @@
-import { createRipple, enableTextElementEditing } from './initHelpers.js';
+import {
+    createRipple,
+    enableTextElementEditing,
+    loadInitialContent,
+} from './initHelpers.js';
+
+import initialContentConfig from '../public/assets/configs/initialContentConfig.json';
 
 import { onChangeRangeInput, onLike, onDownloadPDF } from './handlers.js';
 
 function main() {
-    const onlyTextElements = Array.from(document.querySelectorAll('*')).filter(
-        (el) => {
-            const childNodes = Array.from(el.childNodes);
-            if (childNodes.length === 0) return false;
+    document.addEventListener('DOMContentLoaded', () => {
+        loadInitialContent(initialContentConfig);
+        document
+            .querySelectorAll(
+                Object.entries(initialContentConfig)
+                    .map(([id, value]) => {
+                        let elementSelector;
+                        if (value.items) {
+                            elementSelector = value.itemsClasses
+                                .map((className) => `.${className}`)
+                                .join('');
+                        } else {
+                            elementSelector = `#${id}`;
+                        }
 
-            return childNodes.every(
-                (node) =>
-                    node.nodeType === Node.TEXT_NODE &&
-                    node.textContent.trim().length > 0
-            );
-        }
-    );
-
-    onlyTextElements.forEach(enableTextElementEditing);
+                        return elementSelector;
+                    })
+                    .join(', ')
+            )
+            .forEach(enableTextElementEditing);
+    });
 
     document
         .querySelectorAll('.language-level-inputs .input')

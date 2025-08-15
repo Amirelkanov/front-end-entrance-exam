@@ -71,4 +71,21 @@ function createRipple(event) {
     ripple.addEventListener('animationend', () => ripple.remove());
 }
 
-export { enableTextElementEditing, createRipple };
+async function loadInitialContent(config) {
+    for (const [id, value] of Object.entries(config)) {
+        const elem = document.getElementById(id);
+        if (!elem) continue;
+        if (value.items) {
+            elem.innerHTML = value.items
+                .map(
+                    (item) =>
+                        `<li class="${value.itemsClasses.join(' ')}">${item}</li>`
+                )
+                .join('');
+        } else {
+            elem.textContent = value;
+        }
+    }
+}
+
+export { enableTextElementEditing, createRipple, loadInitialContent };
