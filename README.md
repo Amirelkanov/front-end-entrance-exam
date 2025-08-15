@@ -34,7 +34,7 @@
 
 Демо:
 
-https://github.com/user-attachments/assets/0d8da790-a4c2-448c-b486-943adb8038b5
+https://github.com/user-attachments/assets/760f1c22-c5d7-4a21-92b1-850a9cffdd88
 
 Была создана веб-страница на основе первого шаблона из двух предложенных. Добавлена следующая функциональность:
 
