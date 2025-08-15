@@ -10,7 +10,7 @@
 
     .brief-info {
         .name {
-            margin-block-end: 6px;
+            margin-bottom: 6px;
 
             font-weight: 600;
             font-size: 14px;
@@ -32,18 +32,26 @@
 
     .language-level-list {
         display: flex;
-        flex-direction: column;
+        align-items: center;
 
-        row-gap: 10px;
+        column-gap: 17px;
 
-        .language-level-item {
+        .language-level-labels {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
 
             font-weight: 500;
             font-size: 10px;
             line-height: 104%;
+
+            row-gap: 10px;
+        }
+
+        .language-level-inputs {
+            display: flex;
+            flex-direction: column;
+            width: 168px;
+            row-gap: 10px;
         }
     }
 }

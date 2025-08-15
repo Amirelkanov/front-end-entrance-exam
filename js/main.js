@@ -18,12 +18,14 @@ function main() {
 
     onlyTextElements.forEach(enableTextElementEditing);
 
-    document.querySelectorAll('.language-level-input').forEach((input) => {
-        input.addEventListener('input', (event) =>
-            onChangeRangeInput(event.target)
-        );
-        onChangeRangeInput(input);
-    });
+    document
+        .querySelectorAll('.language-level-inputs .input')
+        .forEach((input) => {
+            input.addEventListener('input', (event) =>
+                onChangeRangeInput(event.target)
+            );
+            onChangeRangeInput(input);
+        });
 
     document
         .querySelectorAll('.icon-button.like-button')

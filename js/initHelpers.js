@@ -2,17 +2,18 @@ function enableTextElementEditing(textElement) {
     textElement.classList.add('editable-text-content');
 
     textElement.addEventListener('click', (event) => {
+        event.preventDefault();
+
         const textElem = event.target;
 
-        textElem.focus();
         textElem.contentEditable = 'true';
 
-        textElem.style.maxWidth = getComputedStyle(textElem).width;
-        textElem.style.maxHeight = getComputedStyle(textElem).height;
+        textElem.style.maxWidth = `${textElem.getBoundingClientRect().width}px`;
+        textElem.style.maxHeight = `${textElem.getBoundingClientRect().height}px`;
         textElem.style.textOverflow = '';
-        textElem.style.overflow = 'hidden auto';
+        textElem.style.overflow = 'hidden';
 
-        textElem.classList.add('styled-scrollbar');
+        textElem.focus();
     });
 
     textElement.addEventListener('keydown', (event) => {
@@ -32,11 +33,6 @@ function enableTextElementEditing(textElement) {
         textElem.scrollTop = 0;
         textElem.scrollLeft = 0;
         textElem.style.textOverflow = 'ellipsis';
-
-        if (!textElem.classList.contains('text-content-item')) {
-            textElem.style.overflow = 'hidden';
-            textElem.classList.remove('styled-scrollbar');
-        }
     });
 }
 

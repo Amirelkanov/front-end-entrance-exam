@@ -1,9 +1,8 @@
-.language-level-input {
+.input {
     --input-value: 50%;
 
     appearance: none;
 
-    width: 168px;
     height: 11px;
 
     border-radius: 3px;
