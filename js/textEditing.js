@@ -18,13 +18,17 @@ export function enableTextElementEditing(textElement) {
 
     textElement.addEventListener('input', (event) => {
         const config = JSON.parse(localStorage.getItem('initialContentConfig'));
+
         if (event.target.tagName === 'LI') {
+            const parentId = event.target.parentNode.id;
             const children = Array.from(event.target.parentNode.children);
             const index = children.indexOf(event.target);
-            config[event.target.parentNode.id].items[index] =
+
+            config['text-elements-content'][parentId].items[index] =
                 event.target.textContent;
         } else {
-            config[event.target.id] = event.target.textContent;
+            config['text-elements-content'][event.target.id] =
+                event.target.textContent;
         }
 
         localStorage.setItem('initialContentConfig', JSON.stringify(config));
