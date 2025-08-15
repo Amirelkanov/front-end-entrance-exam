@@ -3,7 +3,22 @@ import { createRipple, enableTextElementEditing } from './initHelpers.js';
 import { onChangeRangeInput, onLike, onDownloadPDF } from './handlers.js';
 
 function main() {
-    document.querySelectorAll('input[type="range"]').forEach((input) => {
+    const onlyTextElements = Array.from(document.querySelectorAll('*')).filter(
+        (el) => {
+            const childNodes = Array.from(el.childNodes);
+            if (childNodes.length === 0) return false;
+
+            return childNodes.every(
+                (node) =>
+                    node.nodeType === Node.TEXT_NODE &&
+                    node.textContent.trim().length > 0
+            );
+        }
+    );
+
+    onlyTextElements.forEach(enableTextElementEditing);
+
+    document.querySelectorAll('.language-level-input').forEach((input) => {
         input.addEventListener('input', (event) =>
             onChangeRangeInput(event.target)
         );
@@ -11,17 +26,11 @@ function main() {
     });
 
     document
-        .querySelectorAll(
-            'h1, h2, h3, h4, p, time, address, label, span, li.text-content-item'
-        )
-        .forEach(enableTextElementEditing);
-
-    document
         .querySelectorAll('.icon-button.like-button')
         .forEach((likeBtn) => likeBtn.addEventListener('click', onLike));
 
     document
-        .getElementById('download-pdf-btn')
+        .querySelector('#download-pdf-btn')
         .addEventListener('click', onDownloadPDF);
 
     document

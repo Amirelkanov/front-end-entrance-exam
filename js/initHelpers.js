@@ -1,7 +1,7 @@
 function enableTextElementEditing(textElement) {
-    textElement.addEventListener('click', (event) => {
-        event.preventDefault();
+    textElement.classList.add('editable-text-content');
 
+    textElement.addEventListener('click', (event) => {
         const textElem = event.target;
 
         textElem.focus();
@@ -9,7 +9,7 @@ function enableTextElementEditing(textElement) {
 
         textElem.style.maxWidth = getComputedStyle(textElem).width;
         textElem.style.maxHeight = getComputedStyle(textElem).height;
-        textElem.style.textOverflow = 'unset';
+        textElem.style.textOverflow = '';
         textElem.style.overflow = 'hidden auto';
 
         textElem.classList.add('styled-scrollbar');
@@ -26,8 +26,6 @@ function enableTextElementEditing(textElement) {
     });
 
     textElement.addEventListener('blur', (event) => {
-        event.preventDefault();
-
         const textElem = event.target;
         textElem.contentEditable = 'false';
 

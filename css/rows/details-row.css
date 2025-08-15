@@ -81,11 +81,6 @@
                 font-weight: 400;
 
                 color: var(--secondary-text-color);
-
-                .v-divider::after {
-                    content: '|';
-                    color: var(--primary-text-color);
-                }
             }
         }
 
