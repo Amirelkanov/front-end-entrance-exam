@@ -1,32 +1,17 @@
 import { enableTextElementEditing } from './textEditing.js';
-import { loadInitialContent } from './config.js';
+import {
+    loadInitialContent,
+    getTextElementSelectorsFromConfig,
+} from './config.js';
 import { createRipple } from './animation.js';
 
 import { onChangeRangeInput, onLike, onDownloadPDF } from './handlers.js';
 
 function main() {
-    document.addEventListener('DOMContentLoaded', async () => {
-        const config = await loadInitialContent();
-
-        const textElementsSelectors = Object.entries(
-            config['text-elements-content']
-        )
-            .map(([id, value]) => {
-                let elementSelector;
-                if (value.items) {
-                    elementSelector = value.itemsClasses
-                        .map((className) => `.${className}`)
-                        .join('');
-                } else {
-                    elementSelector = `#${id}`;
-                }
-
-                return elementSelector;
-            })
-            .join(', ');
-
+    document.addEventListener('DOMContentLoaded', () => {
+        const config = loadInitialContent();
         document
-            .querySelectorAll(textElementsSelectors)
+            .querySelectorAll(getTextElementSelectorsFromConfig(config))
             .forEach(enableTextElementEditing);
 
         document

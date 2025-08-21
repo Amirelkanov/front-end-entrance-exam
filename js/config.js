@@ -1,9 +1,10 @@
 import defaultConfig from './assets/defaultConfig.json';
 
-async function applyContentFromConfig(config) {
+function applyContentFromConfig(config) {
     for (const [id, value] of Object.entries(config['text-elements-content'])) {
         const elem = document.getElementById(id);
         if (!elem) continue;
+
         if (value.items) {
             elem.innerHTML = '';
             for (const item of value.items) {
@@ -34,7 +35,8 @@ async function applyContentFromConfig(config) {
         });
 }
 
-export async function loadInitialContent() {
+// Returns config from which content is loaded
+function loadInitialContent() {
     let config = localStorage.getItem('initialContentConfig');
     if (!config) {
         localStorage.setItem(
@@ -45,7 +47,26 @@ export async function loadInitialContent() {
     }
     config = JSON.parse(config);
 
-    await applyContentFromConfig(config);
+    applyContentFromConfig(config);
 
     return config;
 }
+
+function getTextElementSelectorsFromConfig(config) {
+    return Object.entries(config['text-elements-content'])
+        .map(([id, value]) => {
+            let elementSelector;
+            if (value.items) {
+                elementSelector = value.itemsClasses
+                    .map((className) => `.${className}`)
+                    .join('');
+            } else {
+                elementSelector = `#${id}`;
+            }
+
+            return elementSelector;
+        })
+        .join(', ');
+}
+
+export { loadInitialContent, getTextElementSelectorsFromConfig };
