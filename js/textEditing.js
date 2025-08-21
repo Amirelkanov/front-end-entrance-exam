@@ -7,11 +7,6 @@ export function enableTextElementEditing(textElement) {
         const textElem = event.target;
 
         textElem.contentEditable = 'true';
-
-        textElem.style.maxWidth = `${textElem.getBoundingClientRect().width}px`;
-        textElem.style.maxHeight = `${textElem.getBoundingClientRect().height}px`;
-        textElem.style.textOverflow = '';
-
         textElem.focus();
     });
 

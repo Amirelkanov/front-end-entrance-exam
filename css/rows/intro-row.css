@@ -6,6 +6,7 @@
         font-weight: 500;
         font-size: 10px;
         line-height: 150%;
+        height: 1.5em;
     }
 
     .brief-info {
@@ -15,12 +16,14 @@
             font-weight: 600;
             font-size: 14px;
             line-height: 104%;
+            height: 1.04em;
         }
 
         .specialization {
             font-weight: 500;
             font-size: 12px;
             line-height: 150%;
+            height: 1.5em;
             color: var(--text-secondary);
         }
     }
@@ -43,6 +46,7 @@
             font-weight: 500;
             font-size: 10px;
             line-height: 104%;
+            width: 25%;
 
             row-gap: 10px;
         }
