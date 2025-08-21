@@ -5,12 +5,13 @@ async function applyContentFromConfig(config) {
         const elem = document.getElementById(id);
         if (!elem) continue;
         if (value.items) {
-            elem.innerHTML = value.items
-                .map(
-                    (item) =>
-                        `<li class="${value.itemsClasses.join(' ')}">${item}</li>`
-                )
-                .join('');
+            elem.innerHTML = '';
+            for (const item of value.items) {
+                const li = document.createElement('li');
+                li.className = value.itemsClasses.join(' ');
+                li.textContent = item;
+                elem.appendChild(li);
+            }
         } else {
             elem.textContent = value;
         }
