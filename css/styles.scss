@@ -1,8 +1,8 @@
-@import 'theme.css';
-@import 'ui/index.css';
+@use 'theme';
+@use 'layout';
 
-@import 'layout.css';
-@import 'rows/index.css';
+@use 'ui/styles' as ui;
+@use 'rows/styles' as row;
 
 * {
     margin: 0;
